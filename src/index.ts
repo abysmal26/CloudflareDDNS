@@ -66,7 +66,7 @@ const main = async () => {
             headers: headers,
             body: JSON.stringify(newData),
         })).json();
-        if (res.errors || res.errors.length >= 1) {
+        if (res.errors && res.errors.length >= 1) {
             return logError(`DNS IPV4 record update failed. Error: ${res.errors[0].message}`);
         }
 
@@ -91,7 +91,7 @@ const main = async () => {
             headers: headers,
             body: JSON.stringify(newData),
         })).json();
-        if (res.errors || res.errors.length >= 1) {
+        if (res.errors && res.errors.length >= 1) {
             return logError(`DNS IPV6 record update failed. Error: ${res.errors[0].message}`);
         }
 
